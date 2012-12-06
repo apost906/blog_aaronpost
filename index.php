@@ -26,6 +26,9 @@ require('config/db.php');
 			<nav>
 				<?php include('layout/nav.php')?>
 			</nav>
+			<div>
+				<?php include ('layout/message.php')?>
+			</div>
 			<div id="content">
 				<?php include('layout/content.php')?>
 			</div>

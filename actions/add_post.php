@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Extract POST data
 extract($_POST);	
 
@@ -17,6 +18,8 @@ if($post_title == '' || $post_text == '')	{
 	
 	die();
 }
+require('../config/db.php');
+
 // Connect to the database
 $conn = new mysqli('localhost',DB_USERNAME,DB_PASSWORD,DB_NAME);
 
@@ -24,7 +27,7 @@ $post_title = addslashes($post_title);
 $post_text = addslashes($post_text);
 
 // Construct query
-$sql = "INSERT INTO posts (post_title,post_text,post"_timestamp) VALUES('$post_title','$post_text')";
+$sql = "INSERT INTO posts (post_title,post_text) VALUES('$post_title','$post_text')";
 
 // Execute query
 $conn->query($sql);

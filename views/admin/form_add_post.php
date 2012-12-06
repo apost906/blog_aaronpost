@@ -1,5 +1,5 @@
 <?php 
-// Check for band info in session data
+// Check for post info in session data
 $post_title = '';
 $post_text = '';
 
