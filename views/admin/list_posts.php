@@ -18,7 +18,7 @@ $results = $conn->query($sql);
 	<tr>
 		<td><?php echo $post['post_title'] ?></td>
 		
-		<td><?php echo $post['post_datepublished'] // $post_datepublished = date('F j, Y at g:i'); ?></td>
+		<td><?php echo formate_date($post['post_datepublished']); ?></td>
 		<td class="actions">
 			<a class="btn btn-warning btn-mini" title="EDIT" href="./?p=admin/form_edit_post&amp;id=<?php echo $post['post_id']?>"><i class="icon-edit icon-white"></i></a>
 			<a class="btn btn-danger btn-mini" title="DELETE" href="actions/delete_post.php?id=<?php echo $post['post_id']?>"><i class="icon-trash icon-white"></i></a>

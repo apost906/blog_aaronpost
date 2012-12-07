@@ -4,6 +4,7 @@ session_start();
 
 // Load DB constants
 require('config/db.php');
+require('config/functions.php');
 
 ?>
 <!DOCTYPE html>
