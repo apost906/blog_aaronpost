@@ -8,14 +8,6 @@
 	-moz-border-radius:6px;
 }
 
-body {
-	padding: 0;
-	margin: 0;
-	background: url(img/vote.jpg) no-repeat center top;
-	width: 100%;
-	display: table;
-}
-
 textarea	{
 	width:500px;
 	height:200px;
@@ -25,3 +17,7 @@ textarea	{
 	width:350px;
 }
 
+a	{
+	color:#000;
+	font-weight:bold;
+}

@@ -1,5 +1,5 @@
 <div id="feed">
-	<h3>RECENT STORIES</h3>
+	<h3>Recent Posts</h3>
 	<div class="post first-post">
 	</div>
 	<?php 
@@ -11,14 +11,27 @@
 	
 	// Execute the query
 	$results = $conn->query($sql);
+	
+	$post = $results->fetch_assoc();
+	
+	$postid = $post['post_id'];
+	echo "<div class=\"post\">";
+	echo "<h4><a href=\"./?p=public/post&amp;id=$postid\">";
+	echo $post['post_title'];
+	echo "</a></h4><h6> Posted on ";
+	echo formate_date($post['post_datepublished']);
+	echo "</h6><p>";
+	echo $post['post_text'];
+	echo "</p></div>";
+	
 	while($post = $results->fetch_assoc())	{
 		$postid = $post['post_id'];
 		echo "<div class=\"post\">";
-		echo "<h5><a href=\"./?p=public/post&amp;id=$postid\">";
+		echo "<h4><a href=\"./?p=public/post&amp;id=$postid\">";
 		echo $post['post_title'];
-		echo "</h5> ";
+		echo "</a></h4><h6> Posted on ";
 		echo formate_date($post['post_datepublished']);
-		echo "</div>";
+		echo "</h6></div>";
 	}
 	
 	?>
